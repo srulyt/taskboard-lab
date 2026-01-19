@@ -1,0 +1,61 @@
+:root {
+  /* Typography */
+  --font: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  
+  /* Colors - Accent */
+  --accent: #0078D4;
+  --accentHover: #106EBE;
+  
+  /* Colors - Surfaces */
+  --canvas: #F5F5F5;
+  --surface: #FFFFFF;
+  --surface2: #FAFAFA;
+  
+  /* Colors - Text */
+  --text: #323130;
+  --text2: #605E5C;
+  
+  /* Colors - Border */
+  --border: #E1DFDD;
+  
+  /* Shadows */
+  --shadow1: 0 1.6px 3.6px rgba(0,0,0,0.13), 0 0.3px 0.9px rgba(0,0,0,0.10);
+  --shadow2: 0 6.4px 14.4px rgba(0,0,0,0.13), 0 1.2px 3.6px rgba(0,0,0,0.10);
+  
+  /* Spacing & Radii */
+  --radius: 8px;
+  --radiusSm: 4px;
+  --radiusMd: 12px;
+  --gap: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility: Focus styles */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,102 @@
+.lane {
+  width: 280px;
+  min-width: 280px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow1);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+}
+
+.lane-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.lane-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.lane-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.lane-action-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radiusSm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2);
+  transition: background 0.15s, color 0.15s;
+}
+
+.lane-action-btn:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+
+.lane-action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lane-action-btn:disabled:hover {
+  background: transparent;
+  color: var(--text2);
+}
+
+.lane-delete-btn:hover:not(:disabled) {
+  background: rgba(164, 38, 44, 0.1);
+  color: #a4262c;
+}
+
+.lane-tasks {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 100px;
+}
+
+.lane-footer {
+  padding: 8px 12px 12px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.add-task-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radiusSm);
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.add-task-btn:hover {
+  background: var(--surface2);
+}
+
+.lane-drag-over {
+  background: rgba(0, 120, 212, 0.05);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}

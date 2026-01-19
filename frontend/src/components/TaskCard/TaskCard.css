@@ -1,0 +1,117 @@
+.task-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow1);
+  padding: 12px;
+  margin-bottom: 8px;
+  cursor: grab;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  position: relative;
+}
+
+.task-card:hover {
+  box-shadow: var(--shadow2);
+  transform: translateY(-2px);
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.task-description {
+  font-size: 12px;
+  color: var(--text2);
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.task-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.task-card:hover .task-actions {
+  opacity: 1;
+}
+
+.task-btn {
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  background: var(--surface);
+  border-radius: var(--radiusSm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2);
+  box-shadow: var(--shadow1);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.task-btn:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+
+.task-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.task-btn:active {
+  transform: scale(0.95);
+}
+
+.task-edit-btn:hover {
+  background: var(--surface2);
+  color: var(--accent);
+}
+
+.task-delete-btn:hover {
+  background: var(--dangerBg, #FDE7E9);
+  color: var(--danger, #D13438);
+}
+
+.task-delete-btn:active {
+  background: var(--dangerBgPressed, #FCCFCF);
+}
+
+/* Drag states */
+.task-card-dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.task-card.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.task-card.drag-preview {
+  border-color: var(--accent);
+  box-shadow: var(--shadow2);
+}
+
+/* Disable hover transform when confirm dialog is showing */
+.task-card.task-card-no-hover,
+.task-card.task-card-no-hover:hover {
+  transform: none;
+}

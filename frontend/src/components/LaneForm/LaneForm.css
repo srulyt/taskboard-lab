@@ -1,0 +1,104 @@
+.lane-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow1);
+}
+
+.lane-form-error {
+  background-color: #FDE7E9;
+  color: #A80000;
+  padding: 8px 12px;
+  border-radius: var(--radiusSm);
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.lane-form-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lane-form-input-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.lane-form-input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radiusSm);
+  font-size: 14px;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--surface);
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.lane-form-input-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.lane-form-input-group input::placeholder {
+  color: var(--text2);
+}
+
+.lane-form-input-group input:disabled {
+  background-color: var(--surface2);
+  cursor: not-allowed;
+}
+
+.lane-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.lane-form .btn-cancel,
+.lane-form .btn-submit {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radiusSm);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.lane-form .btn-cancel {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.lane-form .btn-cancel:hover:not(:disabled) {
+  background: var(--surface2);
+}
+
+.lane-form .btn-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lane-form .btn-submit {
+  background: var(--accent);
+  color: white;
+  border: none;
+}
+
+.lane-form .btn-submit:hover:not(:disabled) {
+  background: var(--accentHover);
+}
+
+.lane-form .btn-submit:disabled {
+  background: var(--border);
+  cursor: not-allowed;
+}

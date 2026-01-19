@@ -1,0 +1,132 @@
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dialog {
+  background: var(--surface);
+  border-radius: var(--radiusMd);
+  box-shadow: var(--shadow2);
+  width: 100%;
+  max-width: 440px;
+  min-width: 320px;
+  margin: 16px;
+  animation: slideIn 0.15s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dialog:focus {
+  outline: none;
+}
+
+.dialog-header {
+  padding: 20px 24px 0 24px;
+}
+
+.dialog-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 8px 0;
+}
+
+.dialog-content {
+  padding: 16px 24px 24px 24px;
+}
+
+.dialog-message {
+  font-size: 14px;
+  color: var(--text2);
+  margin: 0;
+  padding: 8px 8px;
+  line-height: 1.5;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding: 12px 20px 20px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.btn-cancel,
+.btn-confirm {
+  padding: 8px 16px;
+  border-radius: var(--radiusSm);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-cancel {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-cancel:hover {
+  background: var(--surface2);
+}
+
+.btn-cancel:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-cancel:active {
+  transform: scale(0.97);
+}
+
+.btn-confirm {
+  background: #D13438;
+  color: white;
+  border: none;
+}
+
+.btn-confirm:hover {
+  background: #A4262C;
+}
+
+.btn-confirm:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-confirm:active {
+  background: #8A1F23;
+  transform: scale(0.97);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .dialog-overlay,
+  .dialog,
+  .btn-cancel,
+  .btn-confirm {
+    animation: none;
+    transition: none;
+  }
+}
